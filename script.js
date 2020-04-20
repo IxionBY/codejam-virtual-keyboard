@@ -1,19 +1,4 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable prefer-template */
-/* eslint-disable indent */
-/* eslint-disable space-before-blocks */
-/* eslint-disable max-len */
-/* eslint-disable default-case */
-/* eslint-disable no-extra-semi */
-/* eslint-disable semi */
-/* eslint-disable eol-last */
-/* eslint-disable vars-on-top */
-/* eslint-disable no-var */
-/* eslint-disable space-before-function-paren */
-/* eslint-disable func-names */
-/* eslint-disable padded-blocks */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
+
 const keyArray = [
   [
     {
@@ -218,6 +203,7 @@ const keyArray = [
     },
   ],
 ];
+const textareaSelector = document.querySelector('.textarea');
 let shiftFlag = false;
 let langFlag = (localStorage.getItem('langFlag')) ? localStorage.getItem('langFlag') : 'en';
 localStorage.setItem('langFlag', langFlag);
@@ -245,12 +231,12 @@ document.body.append(notation);
 function addNotation() {
   const notationArea = document.querySelector('.notation');
   notationArea.innerHTML = 'Для смены языка нажмите Ctrl+Alt или Win на виртуальной';
-};
+}
 
 addNotation();
 
 // creating keyboard lines
-for (i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i += 1) {
   const keyboardLine = document.createElement('div');
   keyboardLine.className = 'line';
   wrapperKeyboard.appendChild(keyboardLine);
@@ -261,9 +247,9 @@ function drawKeyboard(lang, shift) {
   if (shift) {
     if (lang === 'en') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].EN}</div>`;
         }
         keyboardLines[j].innerHTML = out;
@@ -271,9 +257,9 @@ function drawKeyboard(lang, shift) {
     }
     if (lang === 'EN') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           if (keyArray[j][k].letterEn === 1) {
             out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].en}</div>`;
           } else {
@@ -285,9 +271,9 @@ function drawKeyboard(lang, shift) {
     }
     if (lang === 'ru') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].RU}</div>`;
         }
         keyboardLines[j].innerHTML = out;
@@ -295,9 +281,9 @@ function drawKeyboard(lang, shift) {
     }
     if (lang === 'RU') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           if (keyArray[j][k].letterRu === 1) {
             out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].ru}</div>`;
           } else {
@@ -310,9 +296,9 @@ function drawKeyboard(lang, shift) {
   } else {
     if (lang === 'en') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].en}</div>`;
         }
         keyboardLines[j].innerHTML = out;
@@ -320,9 +306,9 @@ function drawKeyboard(lang, shift) {
     }
     if (lang === 'EN') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           if (keyArray[j][k].letterEn === 1) {
             out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].EN}</div>`;
           } else {
@@ -334,9 +320,9 @@ function drawKeyboard(lang, shift) {
     }
     if (lang === 'ru') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].ru}</div>`;
         }
         keyboardLines[j].innerHTML = out;
@@ -344,9 +330,9 @@ function drawKeyboard(lang, shift) {
     }
     if (lang === 'RU') {
       const keyboardLines = document.querySelectorAll('.line');
-      for (j = 0; j < keyboardLines.length; j++) {
+      for (let j = 0; j < keyboardLines.length; j += 1) {
         let out = '';
-        for (k = 0; k < keyArray[j].length; k++) {
+        for (let k = 0; k < keyArray[j].length; k += 1) {
           if (keyArray[j][k].letterRu === 1) {
             out += `<div class ="k-key ${keyArray[j][k].code}">${keyArray[j][k].RU}</div>`;
           } else {
@@ -358,7 +344,7 @@ function drawKeyboard(lang, shift) {
     }
   }
 }
-drawKeyboard(langFlag, 0);
+drawKeyboard(langFlag, false);
 
 // changing language, CapsLock, Shift
 document.addEventListener('keydown', (event) => {
@@ -390,8 +376,8 @@ document.addEventListener('keydown', (event) => {
 });
 
 document.addEventListener('keyup', () => {
-    shiftFlag = false;
-    drawKeyboard(langFlag, shiftFlag);
+  shiftFlag = false;
+  drawKeyboard(langFlag, shiftFlag);
 });
 
 // changing language, CapsLock, Shift on click
@@ -429,13 +415,12 @@ document.addEventListener('mouseup', () => {
 
 // add and remove active class on pushing, add text to inputarea
 document.addEventListener('keydown', (event) => {
-  for (i = 0; i < keyArray.length; i++) {
-    for (j = 0; j < keyArray[i].length; j++) {
+  for (let i = 0; i < keyArray.length; i += 1) {
+    for (let j = 0; j < keyArray[i].length; j += 1) {
       if (event.code === keyArray[i][j].code) {
         const keyClass = document.querySelector(`.${keyArray[i][j].code}`);
         keyClass.classList.add('active');
-        const textareaSelector = document.querySelector('.textarea');
-        if (shiftFlag === false){
+        if (shiftFlag === false) {
           switch (langFlag) {
             case 'en':
               if (keyArray[i][j].activeKey === 0 && keyArray[i][j].letterEn === 1) {
@@ -456,7 +441,7 @@ document.addEventListener('keydown', (event) => {
                 const s = textareaSelector.selectionStart;
                 textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].EN + textareaSelector.value.substring(textareaSelector.selectionEnd);
                 textareaSelector.selectionEnd = s + 1;
-              } else if (keyArray[i][j].activeKey === 0 && keyArray[i][j].letterEn === 0){
+              } else if (keyArray[i][j].activeKey === 0 && keyArray[i][j].letterEn === 0) {
                 event.preventDefault();
                 const s = textareaSelector.selectionStart;
                 textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].en + textareaSelector.value.substring(textareaSelector.selectionEnd);
@@ -511,7 +496,7 @@ document.addEventListener('keydown', (event) => {
                 const s = textareaSelector.selectionStart;
                 textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].en + textareaSelector.value.substring(textareaSelector.selectionEnd);
                 textareaSelector.selectionEnd = s + 1;
-              } else if (keyArray[i][j].activeKey === 0 && keyArray[i][j].letterEn === 0){
+              } else if (keyArray[i][j].activeKey === 0 && keyArray[i][j].letterEn === 0) {
                 event.preventDefault();
                 const s = textareaSelector.selectionStart;
                 textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].EN + textareaSelector.value.substring(textareaSelector.selectionEnd);
@@ -545,7 +530,6 @@ document.addEventListener('keydown', (event) => {
               }
               break;
           }
-
         }
       }
     }
@@ -553,8 +537,8 @@ document.addEventListener('keydown', (event) => {
 });
 
 document.addEventListener('keyup', (event) => {
-  for (i = 0; i < keyArray.length; i++) {
-    for (j = 0; j < keyArray[i].length; j++) {
+  for (let i = 0; i < keyArray.length; i += 1) {
+    for (let j = 0; j < keyArray[i].length; j += 1) {
       if (event.code === keyArray[i][j].code) {
         const keyClass = document.querySelector(`.${keyArray[i][j].code}`);
         keyClass.classList.remove('active');
@@ -564,63 +548,63 @@ document.addEventListener('keyup', (event) => {
 });
 // add text to inputarea on click
 document.addEventListener('mousedown', (event) => {
-    for (let i = 0; i < keyArray.length; i++) {
-        for (let j = 0; j < keyArray[i].length; j++) {
-            if (event.target.classList.contains(keyArray[i][j].code)) {
-                const keyClass = document.querySelector(`.${keyArray[i][j].code}`);
-                keyClass.classList.add('active');
-                switch (langFlag) {
-                    case 'en':
-                        if (keyArray[i][j].activeKey === 0) {
-                            const start = textareaSelector.selectionStart;
-                            textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].en + textareaSelector.value.substring(textareaSelector.selectionEnd);
-                            textareaSelector.selectionEnd = start + 1;
-                        }
-                        break;
-                    case 'EN':
-                        if (keyArray[i][j].activeKey === 0) {
-                            const start = textareaSelector.selectionStart;
-                            if (keyArray[i][j].letterEn === 1) {
-                                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].EN + textareaSelector.value.substring(textareaSelector.selectionEnd);
-                            } else {
-                                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].en + textareaSelector.value.substring(textareaSelector.selectionEnd);
-                            }
-                            textareaSelector.selectionEnd = start + 1;
-                        }
-                        break;
-                    case 'RU':
-                        if (keyArray[i][j].activeKey === 0) {
-                            const start = textareaSelector.selectionStart;
-                            if (keyArray[i][j].letterRu === 1) {
-                                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].RU + textareaSelector.value.substring(textareaSelector.selectionEnd);
-                            } else {
-                                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].ru + textareaSelector.value.substring(textareaSelector.selectionEnd);
-                            }
-                            textareaSelector.selectionEnd = start + 1;
-                        }
-                        break;
-                    case 'ru':
-                        if (keyArray[i][j].activeKey === 0) {
-                            const start = textareaSelector.selectionStart;
-                            textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].ru + textareaSelector.value.substring(textareaSelector.selectionEnd);
-                            textareaSelector.selectionEnd = start + 1;
-                        }
-                        break;
-                }
+  for (let i = 0; i < keyArray.length; i += 1) {
+    for (let j = 0; j < keyArray[i].length; j += 1) {
+      if (event.target.classList.contains(keyArray[i][j].code)) {
+        const keyClass = document.querySelector(`.${keyArray[i][j].code}`);
+        keyClass.classList.add('active');
+        switch (langFlag) {
+          case 'en':
+            if (keyArray[i][j].activeKey === 0) {
+              const start = textareaSelector.selectionStart;
+              textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].en + textareaSelector.value.substring(textareaSelector.selectionEnd);
+              textareaSelector.selectionEnd = start + 1;
             }
+            break;
+          case 'EN':
+            if (keyArray[i][j].activeKey === 0) {
+              const start = textareaSelector.selectionStart;
+              if (keyArray[i][j].letterEn === 1) {
+                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].EN + textareaSelector.value.substring(textareaSelector.selectionEnd);
+              } else {
+                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].en + textareaSelector.value.substring(textareaSelector.selectionEnd);
+              }
+              textareaSelector.selectionEnd = start + 1;
+            }
+            break;
+          case 'RU':
+            if (keyArray[i][j].activeKey === 0) {
+              const start = textareaSelector.selectionStart;
+              if (keyArray[i][j].letterRu === 1) {
+                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].RU + textareaSelector.value.substring(textareaSelector.selectionEnd);
+              } else {
+                textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].ru + textareaSelector.value.substring(textareaSelector.selectionEnd);
+              }
+              textareaSelector.selectionEnd = start + 1;
+            }
+            break;
+          case 'ru':
+            if (keyArray[i][j].activeKey === 0) {
+              const start = textareaSelector.selectionStart;
+              textareaSelector.value = textareaSelector.value.substring(0, textareaSelector.selectionStart) + keyArray[i][j].ru + textareaSelector.value.substring(textareaSelector.selectionEnd);
+              textareaSelector.selectionEnd = start + 1;
+            }
+            break;
         }
+      }
     }
+  }
 });
 
 document.addEventListener('mouseup', (event) => {
-    for (let i = 0; i < keyArray.length; i++) {
-        for (let j = 0; j < keyArray[i].length; j++) {
-            if (event.target.classList.contains(keyArray[i][j].code)) {
-                const pressButton = document.querySelector(`.${keyArray[i][j].code}`);
-                pressButton.classList.remove('press');
-            }
-        }
+  for (let i = 0; i < keyArray.length; i += 1) {
+    for (let j = 0; j < keyArray[i].length; j += 1) {
+      if (event.target.classList.contains(keyArray[i][j].code)) {
+        const pressButton = document.querySelector(`.${keyArray[i][j].code}`);
+        pressButton.classList.remove('press');
+      }
     }
+  }
 });
 
 // make alt work correctly
@@ -631,52 +615,51 @@ document.addEventListener('keydown', (event) => {
 });
 
 // make tab work correctly
-const textareaSelector = document.querySelector('.textarea');
-textareaSelector.onkeydown = function(event) {
+textareaSelector.onkeydown = function clickOnTab(event) {
   if (event.code === 'Tab') {
     event.preventDefault();
-    var s = this.selectionStart;
+    const s = this.selectionStart;
     this.value = `${this.value.substring(0, this.selectionStart)}\t${this.value.substring(this.selectionEnd)}`;
     this.selectionEnd = s + 1;
   }
-}
+};
 // make active key work corectly
 document.addEventListener('mousedown', (event) => {
-    if (event.target.classList.contains('Tab')) {
-      const s = textareaSelector.selectionStart;
-      textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}\t${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
-      textareaSelector.selectionEnd = s + 1;
-    } else if (event.target.classList.contains('Enter')) {
-      const s = textareaSelector.selectionStart;
-      textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}\n${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
-      textareaSelector.selectionEnd = s + 1;
-    } else if (event.target.classList.contains('Backspace')) {
-      const s = textareaSelector.selectionStart;
-      textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart - 1)}${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
-      textareaSelector.selectionEnd = s - 1;
-    } else if (event.target.classList.contains('Delete')) {
-      const s = textareaSelector.selectionStart;
-      textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}${textareaSelector.value.substring(textareaSelector.selectionEnd + 1)}`;
-      textareaSelector.selectionEnd = s;
-    } else if (event.target.classList.contains('Space')) {
-      const s = textareaSelector.selectionStart;
-      textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)} ${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
-      textareaSelector.selectionEnd = s + 1;
-    } else if (event.target.classList.contains('ArrowDown')) {
-        textareaSelector.selectionStart += 90;
-    } else if (event.target.classList.contains('ArrowUp')) {
-        textareaSelector.selectionStart = textareaSelector.selectionEnd;
-        if (textareaSelector.selectionEnd - 90 < 0) {
-            textareaSelector.selectionEnd = 0;
-        } else {
-            textareaSelector.selectionEnd -= 90;
-        }
-    } else if (event.target.classList.contains('ArrowRight')) {
-      textareaSelector.selectionStart += 1;
-    } else if (event.target.classList.contains('ArrowLeft')) {
-      textareaSelector.selectionStart -= 1;
-      textareaSelector.selectionEnd -= 1;
+  if (event.target.classList.contains('Tab')) {
+    const s = textareaSelector.selectionStart;
+    textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}\t${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
+    textareaSelector.selectionEnd = s + 1;
+  } else if (event.target.classList.contains('Enter')) {
+    const s = textareaSelector.selectionStart;
+    textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}\n${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
+    textareaSelector.selectionEnd = s + 1;
+  } else if (event.target.classList.contains('Backspace')) {
+    const s = textareaSelector.selectionStart;
+    textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart - 1)}${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
+    textareaSelector.selectionEnd = s - 1;
+  } else if (event.target.classList.contains('Delete')) {
+    const s = textareaSelector.selectionStart;
+    textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)}${textareaSelector.value.substring(textareaSelector.selectionEnd + 1)}`;
+    textareaSelector.selectionEnd = s;
+  } else if (event.target.classList.contains('Space')) {
+    const s = textareaSelector.selectionStart;
+    textareaSelector.value = `${textareaSelector.value.substring(0, textareaSelector.selectionStart)} ${textareaSelector.value.substring(textareaSelector.selectionEnd)}`;
+    textareaSelector.selectionEnd = s + 1;
+  } else if (event.target.classList.contains('ArrowDown')) {
+    textareaSelector.selectionStart += 90;
+  } else if (event.target.classList.contains('ArrowUp')) {
+    textareaSelector.selectionStart = textareaSelector.selectionEnd;
+    if (textareaSelector.selectionEnd - 90 < 0) {
+      textareaSelector.selectionEnd = 0;
+    } else {
+      textareaSelector.selectionEnd -= 90;
     }
+  } else if (event.target.classList.contains('ArrowRight')) {
+    textareaSelector.selectionStart += 1;
+  } else if (event.target.classList.contains('ArrowLeft')) {
+    textareaSelector.selectionStart -= 1;
+    textareaSelector.selectionEnd -= 1;
+  }
 });
 
 localStorage.setItem('langFlag', langFlag);
